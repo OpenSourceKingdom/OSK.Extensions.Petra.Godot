@@ -18,8 +18,8 @@ public static class NodeExtensions
     /// <param name="node">The node to use as the starting point for checking a particular script</param>
     /// <param name="searchDepth">Limits the search depth for the search to the depth provided. Null represents checking the entire tree</param>
     /// <returns>The node if found, or null</returns>
-    public static TNode? FindNodeOfType<TNode>(this Node node, int? searchDepth = null)
-        => FindNodesOfType<TNode>(node, searchDepth).FirstOrDefault();
+    public static TNode? FindNode<TNode>(this Node node, int? searchDepth = null)
+        => FindNodes<TNode>(node, searchDepth).FirstOrDefault();
 
     /// <summary>
     /// Attempts to find nodes of a given type, using the node as the base for the scan and proceeding through the children
@@ -28,7 +28,7 @@ public static class NodeExtensions
     /// <param name="node">The node to use as the starting point for checking a particular script</param>
     /// <param name="searchDepth">Limits the search depth for the search to the depth provided. Null represents checking the entire tree</param>
     /// <returns>The nodes if found, or empty</returns>
-    public static IEnumerable<TNode> FindNodesOfType<TNode>(this Node node, int? searchDepth = null)
+    public static IEnumerable<TNode> FindNodes<TNode>(this Node node, int? searchDepth = null)
         => FindNodesOfType<TNode>(node, 0, searchDepth);
 
     private static IEnumerable<TNode> FindNodesOfType<TNode>(Node node, int currentDepth, int? searchDepth)
@@ -70,8 +70,8 @@ public static class NodeExtensions
     /// <param name="node">The node to use as the starting point for checking a particular script</param>
     /// <param name="searchDepth">Limits the search depth for the search to the depth provided. Null represents checking the entire tree</param>
     /// <returns>The node if found, or null</returns>
-    public static TNode? FindParentOfType<TNode>(Node node, int? searchDepth = null)
-        => FindParentsOfType<TNode>(node, searchDepth).FirstOrDefault();
+    public static TNode? FindParent<TNode>(Node node, int? searchDepth = null)
+        => FindParents<TNode>(node, searchDepth).FirstOrDefault();
 
     /// <summary>
     /// Attempts to find nodes of a given type, using the node as the base for the scan and proceeding through the parents
@@ -80,7 +80,7 @@ public static class NodeExtensions
     /// <param name="node">The node to use as the starting point for checking a particular script</param>
     /// <param name="searchDepth">Limits the search depth for the search to the depth provided. Null represents checking the entire tree</param>
     /// <returns>The nodes if found, or empty</returns>
-    public static IEnumerable<TNode> FindParentsOfType<TNode>(Node node, int? searchDepth = null)
+    public static IEnumerable<TNode> FindParents<TNode>(Node node, int? searchDepth = null)
     {
         if (node is TNode typedNode)
         {
