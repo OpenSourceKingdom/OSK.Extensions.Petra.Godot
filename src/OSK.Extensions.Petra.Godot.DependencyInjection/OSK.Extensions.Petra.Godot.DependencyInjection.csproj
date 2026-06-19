@@ -5,9 +5,9 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>12</LangVersion>
 
-		<Description>A collection of extensions for the Godot game engine</Description>
-		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, extensions</PackageTags>
-		<Title>OSK.Extensions.Petra.Godot</Title>
+		<Description>A collection of dependency injection extensions for the Godot game engine</Description>
+		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, dependency, injection, service, extensions</PackageTags>
+		<Title>OSK.Extensions.Petra.Godot.DependencyInjection</Title>
 		<Authors>BlankDev117</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/OpenSourceKingdom/OSK.Extensions.Petra.Godot</RepositoryUrl>
@@ -18,6 +18,14 @@
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\OSK.Extensions.Petra.Godot\OSK.Extensions.Petra.Godot.csproj" />
 	</ItemGroup>
 
 </Project>
