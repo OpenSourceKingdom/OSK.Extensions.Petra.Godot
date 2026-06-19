@@ -1,2 +1,3 @@
-# OSK.Github.Templates.CSharpLibrary
-A starting point for C# libraries within the OSK namespace
+# OSK.Extensions.Petra.Godot
+
+A project that provides many common and useful extensions for a variety Godot related objects
