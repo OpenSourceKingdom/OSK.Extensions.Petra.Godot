@@ -3,14 +3,14 @@ using Microsoft.Extensions.DependencyInjection;
 using OSK.Extensions.Petra.Godot;
 using System;
 
-namespace TowerDefenseLabs.Libraries.OSK.Godot.DependencyInjection;
+namespace OSK.Extensions.Petra.Godot.DependencyInjection;
 
 /// <summary>
 /// A set of service collection extensions utilized within Petra's Godot framework
 /// </summary>
 public static class GodotServiceCollectionExtensions
 {
-	#region GodotNode
+	#region Singleton
 
 	/// <summary>
 	/// Adds a <see cref="Node"/> that is already in a level or scene to the dependency container using the provided root node as the intial object to scan
