@@ -1,6 +1,5 @@
 using Godot;
 using Microsoft.Extensions.DependencyInjection;
-using OSK.Extensions.Petra.Godot;
 using System;
 
 namespace OSK.Extensions.Petra.Godot.DependencyInjection;
