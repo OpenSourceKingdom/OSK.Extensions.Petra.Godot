@@ -6,7 +6,7 @@
 		<LangVersion>12</LangVersion>
 
 		<Description>A collection of dependency injection extensions for the Godot game engine</Description>
-		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, dependency, injection, service, extensions</PackageTags>
+		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, dependency, injection, service, provider, extensions</PackageTags>
 		<Title>OSK.Extensions.Petra.Godot.DependencyInjection</Title>
 		<Authors>BlankDev117</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>

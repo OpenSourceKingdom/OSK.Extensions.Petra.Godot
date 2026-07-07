@@ -5,8 +5,8 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>12</LangVersion>
 
-		<Description>A collection of extensions for the Godot game engine</Description>
-		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, extensions</PackageTags>
+		<Description>A collection of extensions for the Godot game engine, including node, mesh, and other helpful extensions</Description>
+		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, Node, Mesh, extensions</PackageTags>
 		<Title>OSK.Extensions.Petra.Godot</Title>
 		<Authors>BlankDev117</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
