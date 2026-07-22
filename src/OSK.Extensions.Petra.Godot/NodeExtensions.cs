@@ -12,11 +12,11 @@ public static class NodeExtensions
     #region Remove Children
 
     /// <summary>
-    /// Removes all children for the node.
+    /// Frees all children for the node.
     /// </summary>
-    /// <param name="node">The node that will have all of its children removed.</param>
+    /// <param name="node">The node that will have all of its children freed.</param>
     /// <param name="immediate">Determines if the freeing of resources can be delayed, to the end of frame, or must happen immediately</param>
-    public static void RemoveAllChildren(this Node node, bool immediate = false)
+    public static void FreeChildren(this Node node, bool immediate = false)
     {
         foreach (var child in node.GetChildren())
         {
@@ -28,6 +28,24 @@ public static class NodeExtensions
             {
                 child.QueueFree();
             }
+        }
+    }
+
+    /// <summary>
+    /// Removes all children for the node.
+    /// </summary>
+    /// <remarks>
+    /// 💡Notes:
+    /// <list type="bullet">
+    /// <item>The removed children are NOT freed</item>
+    /// </list>
+    /// </remarks>
+    /// <param name="node">The node that will have all of its children removed.</param>
+    public static void RemoveChildren(this Node node)
+    {
+        foreach (var child in node.GetChildren())
+        {
+            node.RemoveChild(child);
         }
     }
 
