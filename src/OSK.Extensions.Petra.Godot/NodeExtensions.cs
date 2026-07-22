@@ -9,6 +9,90 @@ namespace OSK.Extensions.Petra.Godot;
 /// </summary>
 public static class NodeExtensions
 {
+    #region Remove Children
+
+    /// <summary>
+    /// Frees all children for the node.
+    /// </summary>
+    /// <param name="node">The node that will have all of its children freed.</param>
+    /// <param name="immediate">Determines if the freeing of resources can be delayed, to the end of frame, or must happen immediately</param>
+    public static void FreeChildren(this Node node, bool immediate = false)
+    {
+        foreach (var child in node.GetChildren())
+        {
+            if (immediate)
+            {
+                child.Free();
+            }
+            else
+            {
+                child.QueueFree();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes all children for the node.
+    /// </summary>
+    /// <remarks>
+    /// 💡Notes:
+    /// <list type="bullet">
+    /// <item>The removed children are NOT freed</item>
+    /// </list>
+    /// </remarks>
+    /// <param name="node">The node that will have all of its children removed.</param>
+    public static void RemoveChildren(this Node node)
+    {
+        foreach (var child in node.GetChildren())
+        {
+            node.RemoveChild(child);
+        }
+    }
+
+    #endregion
+
+    #region Add Children
+
+    /// <summary>
+    /// Adds all children to the node. This will reparent if a parent already exists for the child.
+    /// </summary>
+    /// <param name="node">The node to add children to</param>
+    /// <param name="children">The children to add</param>
+    public static void AddChildren(this Node node, params Node[] children)
+        => node.AddChildren(true, children);
+
+    /// <summary>
+    /// Adds all children to the node.
+    /// </summary>
+    /// <param name="node">The node to add children to</param>
+    /// <param name="reparent"></param>Determines if existing parents should be removed, if set to false and a parent exists the child will not be added.</param>
+    /// <param name="children">The children to add</param>
+    public static void AddChildren(this Node node, bool reparent, params Node[] children)
+    {
+        if (children is null)
+        {
+            return;
+        }
+
+        foreach (var child in children)
+        {
+            var parent = child.GetParent();
+            if (parent is not null)
+            {
+                if (reparent && parent != node)
+                {
+                    child.Reparent(node);
+                }
+            }
+            else
+            {
+                node.AddChild(child);
+            }
+        }
+    }
+
+    #endregion
+
     #region FindNode
 
     /// <summary>
