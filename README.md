@@ -9,4 +9,4 @@ A project that provides many common and useful extensions for a variety Godot re
 # OSK.Extensions.Petra.Godot.DependencyInjection
 
 A project that provides commond and useful extensions relating to the dependency injection system. Extensions include:
- - `ServiceCollectin`: Adds a node to a dependency container that utilizes standard .NET service collection and providers
+ - `ServiceCollection`: Adds a node to a dependency container that utilizes standard .NET service collection and providers
