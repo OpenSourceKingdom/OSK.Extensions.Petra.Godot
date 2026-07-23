@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="OSK.Extensions.Petra.Godot.DependencyInjection/OSK.Extensions.Petra.Godot.DependencyInjection.csproj" Id="f39afd58-224c-467c-a8d0-ce4badd15fdb" />
+  <Project Path="OSK.Extensions.Petra.Godot.Roslyn/OSK.Extensions.Petra.Godot.Roslyn.csproj" Id="c17ad629-2cbf-468b-85ec-91c749e47faa" />
   <Project Path="OSK.Extensions.Petra.Godot/OSK.Extensions.Petra.Godot.csproj" />
 </Solution>

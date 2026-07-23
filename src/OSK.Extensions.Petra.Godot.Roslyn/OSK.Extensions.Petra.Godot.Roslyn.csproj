@@ -1,0 +1,28 @@
+﻿<Project Sdk="Godot.NET.Sdk/4.4.0">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>12</LangVersion>
+
+		<Description>A collection of extensions for the Godot game engine, that utilizes .NET Roslyn</Description>
+		<PackageTags>OpenSourceKingdom, OpenSource, Petra, Game, Framework, Suite, Tool, Godot, Node, Mesh, extensions</PackageTags>
+		<Title>OSK.Extensions.Petra.Godot.Roslyn</Title>
+		<Authors>BlankDev117</Authors>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/OpenSourceKingdom/OSK.Extensions.Petra.Godot</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.6.0" />
+	</ItemGroup>
+
+
+</Project>
