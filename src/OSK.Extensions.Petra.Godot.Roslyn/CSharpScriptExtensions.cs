@@ -9,7 +9,7 @@ namespace OSK.Extensions.Petra.Godot.Roslyn;
 
 public static class CSharpScriptExtensions
 {
-    private static readonly Dictionary<string, Type?> _knwonScriptTypes = [];
+    private static readonly Dictionary<string, Type?> _knownScriptTypes = [];
 
     /// <summary>
     /// Attempts to get the script's underlying type. This would return the script's actual class type. 
@@ -51,7 +51,7 @@ public static class CSharpScriptExtensions
                                                     .Select(syntax => syntax.Name.ToString());
 
         var scriptTypeName = string.Join(".", namespaceNames.Append(classDeclarationSyntax.Identifier.Text));
-        if (_knwonScriptTypes.TryGetValue(scriptTypeName, out var scriptType))
+        if (_knownScriptTypes.TryGetValue(scriptTypeName, out var scriptType))
         {
             return scriptType;
         }
@@ -67,7 +67,7 @@ public static class CSharpScriptExtensions
             }
         }
 
-        _knwonScriptTypes[scriptTypeName] = scriptType;
-        return null;
+        _knownScriptTypes[scriptTypeName] = scriptType;
+        return scriptType;
     }
 }
